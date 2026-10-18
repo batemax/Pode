@@ -1,0 +1,10 @@
+name: pode
+services:
+  backend:
+    build:
+      context: ../backend
+    environment:
+      HTTP_ADDR: ":8080"
+    ports:
+      - "${PODE_PORT:-8080}:8080"
+    restart: unless-stopped
